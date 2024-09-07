@@ -46,6 +46,9 @@ using namespace std;
    remove duplicate element of array
 */
 
+
+
+
 void removeduplicate(int arr[] , int &n){
 
             if (n == 0)
