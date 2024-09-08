@@ -644,20 +644,41 @@ Q.3 Remove Duplicates from a Sorted Array
 
 */
 
+
 // void intersection(int arr1[], int arr2[], int n , int m){
            
                
-//                  int i = 0, j = 0;
+//             int freq1[100] = {0};
 
-//               while (i < n || j < m)
-//               {
-//                   if (arr1[i] == arr2[j])
-//                   {
-//                         res[]
-//                   }
-                  
-//               }
-              
+//             int result[100];
+//             int idx = 0;
+
+//              // store frequency
+
+//             for (int i = 0; i < n; i++)
+//             {
+//                 freq1[arr1[i]]++;
+//             }
+
+//             //  count frequency
+
+//             for (int i = 0; i < m; i++)
+//             {
+//                     if (freq1[arr2[i]] > 0)
+//                     {
+//                           result[idx++] = arr2[i]; 
+
+//                           freq1[arr2[i]]--; 
+//                     }
+                    
+//             }
+
+//            // print output 
+
+//            for (int i = 0; i < idx; i++)
+//            {
+//                 cout<<result[i]<<" ";
+//            }             
               
 // }
 
@@ -670,25 +691,192 @@ Q.3 Remove Duplicates from a Sorted Array
 
 //           int m = sizeof(arr2)/sizeof(arr2[0]);
 
-      
-
 //             intersection(arr1,arr2,n,m);
 
 //       return 0;
 // }
 
 
+/*
+  13. Shift All Zeroes to the End of the Array
+      o Explanation: Move all zero elements to the end while maintaining the order of
+         non-zero elements.
+      o Given Array: {0, 1, 0, 3, 12}
+      o Expected Array: {1, 3, 12, 0, 0}
+*/
+
+
+// void zeroatend(int arr[], int n){
+            
+//           int j = 0;
+
+//           for (int i = 0; i < n; i++)
+//           {
+//              if (arr[i] != 0)
+//              {
+//                     arr[j] = arr[i];
+
+//                     j++;
+//              }
+             
+//           }
+
+//           for (int i = j; i < n; i++)
+//           {
+//                arr[i] = 0;
+//           }
+          
+//           //output
+
+//           for (int i = 0; i < n; i++)
+//           {
+//               cout<<arr[i]<<" ";
+//           }
+          
+            
+// }
+
+// int main(){
+
+//        int arr[] = {0,1,0,3,12};
+        
+//         int n = sizeof(arr)/sizeof(arr[0]);
+
+//         zeroatend(arr,n);
+        
+//       return 0;
+// }
+
 
 /*
-     buys and sell stocks  
+   14. Find the Longest Increasing Subsequence
+       o Explanation: Identify the longest subsequence where each element is greater than
+           the previous one.
+       o Given Array: {10, 9, 2, 5, 3, 7, 101, 18}
+       o Expected Array: {2, 3, 7, 101}
 */
+
+// int main(){
+       
+//           int arr[] = {10,9,2,5,3,7,101,18};
+           
+//            int n = sizeof(arr)/sizeof(arr[0]);
+
+
+            
+//       return 0;
+// }
+
+
+/*
+   15. Check if Two Arrays are Rotations of Each Other
+       o Explanation: Determine if one array can be obtained by rotating the other array.
+       o Given Arrays: {1, 2, 3, 4, 5} and {3, 4, 5, 1, 2}
+       o Expected Result: True
+
+*/
+
+
+// bool isrotated(int arr1[],int arr2[] , int n, int m){
+       
+
+//        if (n != m)
+//        {
+//             return false;
+//        }
+
+//        int temp[n*2];
+
+//        for (int i = 0; i < n; i++)
+//        {
+//              temp[i] = arr1[i];
+//              temp[n+i] = arr1[i];
+//        }
+       
+
+//        // check
+
+//        for (int i = 0; i < n; i++)
+//        {
+//                 bool isrotate = true;
+
+//             for (int j = 0; j < n; j++)
+//             {
+//                   if ( temp[i+j] != arr2[j])
+//                   {
+//                         isrotate =  false;
+//                         break;
+//                   }
+                  
+//             }
+         
+//           if (isrotate)
+//           {
+//               return true;
+//           }
+          
+
+
+//        }       
+       
+//          return false;
+// }
+
+
+
+
+// int main(){
+     
+//      int arr1[] = {1,2,3,4,5};
+
+//      int arr2[] = {3,4,5,1,2};
+
+//      int n = sizeof(arr1)/sizeof(arr1[0]);
+
+//      int m = sizeof(arr2)/sizeof(arr2[0]);
+
+
+//       if (isrotated(arr1,arr2,n,m))
+//       {
+//             cout<<"the array are rotation of each other"<<endl;
+//        } else 
+//       cout<<"array not a rotation of each other"<<endl;
+
+//       return 0;
+// }
+
+
+/*
+    16. Compute the Product of All Elements Except the Current One
+        o Explanation: For each element, compute the product of all other elements in the
+          array.
+        o Given Array: {1, 2, 3, 4}
+        o Expected Array: {24, 12, 8, 6}
+
+*/
+
+void productarr(int arr[], int n){
+
+      int result[n];
+        
+           for (int i = 0; i < n; i++)
+           {
+              for (int j = 0; j < n-1; j++)
+              {
+                   
+              }
+              
+           }
+           
+}
 
 int main(){
 
-      int prices[] ={7,1,5,3,6,4};
+      int arr[] = {1,2,3,4};
 
-      
+      int n = sizeof(arr)/sizeof(arr[0]);
 
+      productarr(arr,n);
 
       return 0;
 }
