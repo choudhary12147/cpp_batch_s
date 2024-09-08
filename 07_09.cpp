@@ -560,52 +560,135 @@ Q.3 Remove Duplicates from a Sorted Array
 */
 
 
-void transpose(int arr[][3] , int row , int col){
-            
-            for (int i = 0; i < row; i++)
-            {
-                  for (int j = 0; j < col; j++)
-                  {
-                          int temp = arr[i][j];
 
-                           arr[i][j] = arr[j][i];
+// void reverserows(int  arr[3][3], int n){
 
-                           arr[j][i] = temp;  
-                  }
+
+//       for (int i = 0; i < n; i++)
+//       {
+//             int st = 0;
+//             int end = n-1;
+
+//             while (st<end)
+//             {
+//                   int j = 0;
+//                   int temp = arr[i][st];
+//                   arr[i][st] = arr[i][end];
+//                   arr[i][end] = temp;
+
+//                   st++;
+//                   end--;
                   
-            }
+//             }
             
-}
+//       }
+      
+// }
 
 
-void rotated90degree(int arr[][3] , int row , int col){
-        
-        // transpose
 
-        transpose(arr , row , col);
+// void transpose(int arr[3][3] , int n){
+            
+//             for (int i = 0; i < n; i++)
+//             {
+//                   for (int j = i; j < n; j++)
+//                   {
+//                            swap(arr[i][j],arr[j][i]);
+//                   }
+                  
+//             }    
+
+// }
 
 
-}
+// void  rotated90degree(int arr[3][3],int n){
+
+//       // transpose the matrix
+
+//             transpose(arr,n);
+
+//         // reverse the row
+
+//           reverserows(arr,n);    
+// }
+
+
+// int main(){
+
+//      int arr[3][3] = {{1,2,3},
+//                      {4,5,6},
+//                      {7,8,9}};
+
+//             rotated90degree(arr,3);
+
+//            for (int i = 0; i < 3; i++)
+//            {
+//               for (int j = 0; j < 3; j++)
+//               {
+//                    cout<<arr[i][j]<<" ";
+//               }
+//               cout<<endl;
+              
+//            }
+           
+
+//       return 0;
+// }
+
+
+/*
+    12. Find the Intersection of Two Arrays
+         o Explanation: Identify common elements between two arrays. 
+         o Given Arrays: {1, 2, 2, 1} and {2, 2}
+         o Expected Array: {2, 2}
+
+*/
+
+// void intersection(int arr1[], int arr2[], int n , int m){
+           
+               
+//                  int i = 0, j = 0;
+
+//               while (i < n || j < m)
+//               {
+//                   if (arr1[i] == arr2[j])
+//                   {
+//                         res[]
+//                   }
+                  
+//               }
+              
+              
+// }
+
+// int main(){
+    
+//           int arr1[] = {1,2,2,1};
+//           int arr2[] = {2,2};
+
+//           int n = sizeof(arr1)/sizeof(arr1[0]);
+
+//           int m = sizeof(arr2)/sizeof(arr2[0]);
+
+      
+
+//             intersection(arr1,arr2,n,m);
+
+//       return 0;
+// }
+
+
+
+/*
+     buys and sell stocks  
+*/
 
 int main(){
 
-     int arr[][3] = {{1,2,3},
-                     {4,5,6},
-                     {7,8,9}};
+      int prices[] ={7,1,5,3,6,4};
+
+      
 
 
-       rotated90degree(arr , 3 , 3);  
-
-       for (int i = 0; i < 3; i++)
-       {
-            for (int j = 0; j < 3; j++)
-            {
-                  cout<<arr[i][j]<<" ";
-            }
-
-            cout<<endl;
-            
-       }
-                    
       return 0;
 }
