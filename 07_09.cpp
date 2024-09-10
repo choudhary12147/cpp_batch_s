@@ -855,28 +855,94 @@ Q.3 Remove Duplicates from a Sorted Array
 
 */
 
-void productarr(int arr[], int n){
 
-      int result[n];
+
+// void productarr(int arr[], int n){
+
+//       int result[n], left[n], right[n];
         
-           for (int i = 0; i < n; i++)
-           {
-              for (int j = 0; j < n-1; j++)
+//         // left 
+            
+//             left[0] = 1;
+
+
+//         for (int i = 1; i < n; i++)
+//         {
+//              left[i] = left[i-1]*arr[i-1];
+//         }
+        
+//            right[n-1] = 1;
+
+//         for (int i = n-2 ; i >= 0; i--)
+//         {
+//              right[i] = right[i+1]*arr[i+1];
+//         }
+
+//         // result
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             result[i] = left[i]*right[i];
+//         }
+        
+
+//         //output
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             cout<<result[i]<<" ";
+//         }
+           
+// }
+
+// int main(){
+
+//       int arr[] = {1,2,3,4};
+
+//       int n = sizeof(arr)/sizeof(arr[0]);
+
+//       productarr(arr,n);
+
+//       return 0;
+// }
+
+
+/*
+      17. Find the Pair with the Given Sum
+          o Explanation: Identify a pair of elements that sum up to a specified value.
+          o Given Array: {1, 4, 5, 3, 2}
+          o Sum Value: 7
+          o Expected Pair: {4, 3}
+    
+*/
+
+void pairsum(int arr[], int n){
+              
+              
+
+              for (int i = 0; i < n; i++)
               {
-                   
+                 for (int j = i+1; j < n; j++)
+                 {
+                       if (arr[i]+arr[j] == 7)
+                       {
+                              cout<<arr[i]<<" "<<arr[j]<<endl;                             
+                       }
+                       
+                 }
+                 
               }
               
-           }
-           
 }
 
 int main(){
 
-      int arr[] = {1,2,3,4};
+       int arr[] = {1,4,5,3,2};
 
-      int n = sizeof(arr)/sizeof(arr[0]);
+       int n = sizeof(arr)/sizeof(arr[0]);
 
-      productarr(arr,n);
+       pairsum(arr,n);
 
-      return 0;
+
+   return 0;
 }
