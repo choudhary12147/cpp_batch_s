@@ -916,33 +916,59 @@ Q.3 Remove Duplicates from a Sorted Array
     
 */
 
-void pairsum(int arr[], int n){
+// void pairsum(int arr[], int n){
               
               
 
-              for (int i = 0; i < n; i++)
-              {
-                 for (int j = i+1; j < n; j++)
-                 {
-                       if (arr[i]+arr[j] == 7)
-                       {
-                              cout<<arr[i]<<" "<<arr[j]<<endl;                             
-                       }
+//               for (int i = 0; i < n; i++)
+//               {
+//                  for (int j = i+1; j < n; j++)
+//                  {
+//                        if (arr[i]+arr[j] == 7)
+//                        {
+//                               cout<<arr[i]<<" "<<arr[j]<<endl;                             
+//                        }
                        
-                 }
+//                  }
                  
-              }
+//               }
               
+// }
+
+// int main(){
+
+//        int arr[] = {1,4,5,3,2};
+
+//        int n = sizeof(arr)/sizeof(arr[0]);
+
+//        pairsum(arr,n);
+
+
+//    return 0;
+// }
+
+
+/*
+
+   18. Find the Largest Sum of a Contiguous Subarray ?
+       o Explanation: Determine the maximum sum of any contiguous subarray.
+       o Given Array: {34, -50, 42, 14, -5, 86};
+       o Expected Result: 137
+
+*/
+
+void maxsum(int arr[] , int n){
+      
 }
 
+
 int main(){
+          
+          int arr[] = {34, -50 , 42 , -5 ,86};
 
-       int arr[] = {1,4,5,3,2};
+          int n = sizeof(arr)/sizeof(arr[0]);
 
-       int n = sizeof(arr)/sizeof(arr[0]);
-
-       pairsum(arr,n);
-
+          maxsum(arr,n);
 
    return 0;
 }
