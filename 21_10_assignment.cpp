@@ -120,16 +120,114 @@ using namespace std;
 
 
 
+// int main(){
+
+//      set <int> s = {1,2,3,4,5};
+
+//      int ele = 6;
+
+//       if ( s.find(3) != s.end())
+//       {
+//           cout<<"element in set";
+
+//       }else
+//       {
+//         cout<<"element not persent";
+//       }
+              
+//     return 0;
+// }
+
+
+
 int main(){
 
-   multiset <int> s = {1,2,2,3,4,5,5,5};
+  set <int> s;
 
-   int target = 5;
+  s.insert(1);
+  s.insert(2);
+  s.insert(3);
+  s.insert(4);
+  s.insert(5);
 
-     int count =  s.count(target);
 
-      cout<<count<<endl;
+    cout<<*s.upper_bound(3)<<endl;
+    cout<<*s.lower_bound(5)<<endl;
+    cout<<*s.upper_bound(5)<<endl;
+    cout<<(s.upper_bound(5) == s.end())<<endl;
 
-    return 0;
+    for (auto i = s.begin(); i != s.end(); i++)
+    {
+            cout<<*i; 
+    }
+  
+  cout<<endl;
+
+  // for (int i = 0; i < s.size(); i++)    
+  // {
+  //     cout<<s[i];                   not allowed in set but in vector
+  // }
+  
+
+ for(auto it : s){
+          cout<<it;
+ }
+cout<<endl;
+
+
+
+  //custome comparator for decresing order
+
+
+  set <int , greater<int>> s1;
+
+      s1.insert(1);
+      s1.insert(2);
+      s1.insert(3);
+
+      for(auto it : s1){
+          cout<<it<<" ";
+
+      }
+
+      cout<<endl;
+  
+
+
+
+
+    vector <int> vec ;
+
+      vec = {3,4};
+
+    vec.push_back(1);
+    vec.push_back(2);
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        cout<<vec[i];
+    }
+    
+    cout<<endl;
+
+    for (auto i = vec.begin(); i !=  vec.end(); i++)
+    {
+             cout<<*i;
+    }
+    
+    cout<<endl;
+
+    // vector to set
+
+    set <int> s2 (vec.begin(),vec.end());
+
+    for(auto it : s2){
+      cout<<it;
+    }
+    cout<<endl;
+
+    
+
+return 0;
+
 }
-
