@@ -115,7 +115,7 @@ using namespace std;
 
 
 
-// 4 calculate the occurrence of and element inside set 
+// 4 calculate the occurrence of an element inside set 
 
 
 
@@ -140,28 +140,28 @@ using namespace std;
 
 
 
-int main(){
+// int main(){
 
-  set <int> s;
+//   set <int> s;
 
-  s.insert(1);
-  s.insert(2);
-  s.insert(3);
-  s.insert(4);
-  s.insert(5);
+//   s.insert(1);
+//   s.insert(2);
+//   s.insert(3);
+//   s.insert(4);
+//   s.insert(5);
 
 
-    cout<<*s.upper_bound(3)<<endl;
-    cout<<*s.lower_bound(5)<<endl;
-    cout<<*s.upper_bound(5)<<endl;
-    cout<<(s.upper_bound(5) == s.end())<<endl;
+//     cout<<*s.upper_bound(3)<<endl;
+//     cout<<*s.lower_bound(5)<<endl;
+//     cout<<*s.upper_bound(5)<<endl;
+//     cout<<(s.upper_bound(5) == s.end())<<endl;
 
-    for (auto i = s.begin(); i != s.end(); i++)
-    {
-            cout<<*i; 
-    }
+//     for (auto i = s.begin(); i != s.end(); i++)
+//     {
+//             cout<<*i; 
+//     }
   
-  cout<<endl;
+//   cout<<endl;
 
   // for (int i = 0; i < s.size(); i++)    
   // {
@@ -169,65 +169,243 @@ int main(){
   // }
   
 
- for(auto it : s){
-          cout<<it;
- }
-cout<<endl;
+//  for(auto it : s){
+//           cout<<it;
+//  }
+// cout<<endl;
 
 
 
   //custome comparator for decresing order
 
 
-  set <int , greater<int>> s1;
+  // set <int , greater<int>> s1;
 
-      s1.insert(1);
-      s1.insert(2);
-      s1.insert(3);
+  //     s1.insert(1);
+  //     s1.insert(2);
+  //     s1.insert(3);
 
-      for(auto it : s1){
-          cout<<it<<" ";
+  //     for(auto it : s1){
+  //         cout<<it<<" ";
 
-      }
+  //     }
 
-      cout<<endl;
+
+
+
+
+//       cout<<"set after erase "<<endl;
+  
+//   // erase element from set
+
+//      s1.erase(s1.begin());
+    
+    
+//       for(auto it: s1){
+//           cout<<it;
+//       }
+
+//      cout<<endl;
+
+
+//     vector <int> vec ;
+
+//       vec = {3,4};
+
+//     vec.push_back(1);
+//     vec.push_back(2);
+
+//     for (int i = 0; i < vec.size(); i++)
+//     {
+//         cout<<vec[i];
+//     }
+    
+//     cout<<endl;
+
+//     for (auto i = vec.begin(); i !=  vec.end(); i++)
+//     {
+//              cout<<*i;
+//     }
+    
+//     cout<<endl;
+
+
+
+//     // vector to set
+
+//     cout<<"vector to set";
+
+//     set <int> s2 (vec.begin(),vec.end());
+
+//     for(auto it : s2){
+//       cout<<it;
+//     }
+//     cout<<endl;
+
+
+//    // set to vector
+
+//    cout<<"set to vector";
+
+//      vector <int> v1 (s2.begin(),s2.end());
+
+//         for (int i = 0; i < v1.size(); i++)
+//         {
+//             cout<<v1[i];
+//         }
+      
+
+// return 0;
+
+// }
+
+
+// multi set
+
+
+// int main(){
+    
+//     multiset <int> s;
+
+//        s.insert(1);
+//        s.insert(1);
+//        s.insert(1);
+//        s.insert(2);
+//        s.insert(2);
+//        s.insert(2);
+//        s.insert(4);
+//        s.insert(5);
+
+//        for(auto it : s){
+            
+//             cout<<it<<" ";
+
+//        }
+          
+//           cout<<endl;
+
+//        s.erase(s.erase(1));
+//        s.erase(s.find(2));
+
+//        for(auto it:s){
+//           cout<<it<<" ";
+//        }
+//        cout<<endl;
+
+
+
+//        set <int> s2 = {5,3,4};
+
+//        for(auto it:s2){
+//           cout<<it<<" ";
+//        }
   
 
 
+//   return 0;
+// }
 
 
-    vector <int> vec ;
 
-      vec = {3,4};
+// unordered  set
 
-    vec.push_back(1);
-    vec.push_back(2);
+// #include<unordered_set>
 
-    for (int i = 0; i < vec.size(); i++)
-    {
-        cout<<vec[i];
-    }
+// int main(){
     
-    cout<<endl;
+//     unordered_set <int> s = {3,2,5,6};
 
-    for (auto i = vec.begin(); i !=  vec.end(); i++)
-    {
-             cout<<*i;
-    }
-    
-    cout<<endl;
+//     s.insert(7);
+//     s.insert(8);
 
-    // vector to set
+//     for(auto it:s){
+         
+//          cout<<it<<" ";
 
-    set <int> s2 (vec.begin(),vec.end());
+//     }
+   
 
-    for(auto it : s2){
-      cout<<it;
-    }
-    cout<<endl;
+//   return 0;
+// }
 
-    
 
-return 0;
+// 5. take two vectors and find the common elements from them ?
 
-}
+
+  
+  vector <int> common(vector <int> vec1 , vector <int> vec2){
+                   
+
+                   bool found = false;
+
+                   vector <int> result;
+                    
+              for(auto it: vec1){
+
+                    for (int i = 0; i < vec2.size(); i++)
+                    {
+                           if (it == vec2[i])
+                           {
+                              found = true;
+                              break;
+                           }
+                            
+                    }
+
+                    if (!found)
+                    {
+                             result.push_back(it);
+                    }
+                    
+
+              }
+                    
+                    // for(auto it:vec2){
+
+                       
+                    //    for (int i = 0; i < vec1.size(); i++)
+                    //    {
+                    //            if (it == vec2[i])
+                    //            {
+                    //                 found = true;
+                    //                 break;
+
+                    //            }
+                               
+                    //    }
+
+
+                    //    if(!found){
+                    //     result.push_back(it);
+
+                    //    }
+
+
+                    // }
+
+               return result;
+       
+  }
+
+
+
+
+
+  int main(){
+
+     vector <int> vec1 = {1,2,3,4};
+
+     vector <int> vec2 = {1,2,6,7};
+
+      vector <int> result =   common(vec1,vec2);
+
+           for(auto it : result){
+
+                 cout<<it<<" ";
+           }
+
+          return 0; 
+
+  }
+
+
