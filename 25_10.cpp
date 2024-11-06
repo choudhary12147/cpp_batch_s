@@ -56,11 +56,52 @@ void displaydata( vector <FarmerCrops> &farmers){
 
  }
 
+
+
+
+vector <string> findFarmersByCrop( vector <FarmerCrops> & farmers , string crop ){
+
+         vector <string> result;
+
+
+         for(auto farmer : farmers){
+                 
+
+                 for(auto crop1 : farmer.crops){
+                       
+                       if (crop1 == crop)
+                       {
+                           result.push_back(farmer.name);
+                       }
+                       
+                       
+                 }      
+                       
+
+         }
+
+
+        return result;
+
+}
+
+
+
+void removeduplicate( vector <FarmerCrops> & farmer){
+
+
+       set <string> unique (farmer.crops.begin(), farmer.crops.end());
+
+        farmer.crops.assign( unique.begin() , unique.end());   
+
+}
+
+
 int main(){
        
        vector <FarmerCrops>  farmers;
 
-       addFarmer( farmers , "ramesh" , {"Wheat" , "Rice" ,"Maize"});
+       addFarmer( farmers , "ramesh" , {"Wheat" , "Rice" ,"Maize", "wheat"});
        addFarmer( farmers , "sita" , {"wheat" , "cotton"});
    
       displaydata(farmers);
@@ -75,5 +116,28 @@ vector< vector<string>> croplists = {{"wheat" , "Rice" , "maize"} , {"wheat" , "
            cout<<crop<<" ";
    }
 
+
+   string crop = "wheat";
+
+   vector <string> farmersGrowingCrop = findFarmersByCrop(farmers,crop);
+
+   cout<<endl;
+
+   for( auto it : farmersGrowingCrop){
+          
+          cout<<it<<" ";
+      
+   }
+
+     // remove duplicate
+
+       vector <FarmerCrops> farmer = {"sunil",{"wheet" ,"rice" ,"rice","daal"}};
+       
+       removeduplicate( farmer);
+
+
     return 0;
 }
+
+
+
