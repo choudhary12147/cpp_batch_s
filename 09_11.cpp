@@ -170,23 +170,145 @@ cout<<"\n"<<"\n"<<"H.W 3"<<"\n";
   }
   
 
-
-for(auto v2:iteam){
-
-      for(auto v1:v2 ){
+for (int i = 0; i < iteam.size(); i++)
+{
+      cout<<i<<" ";
+      for (int j = 0; j < iteam[i].size(); j++)
+      {
+             cout<<"{";
+              for(auto it:iteam[i][j]){
+                  cout<<it<<",";
+              }
+              cout<<"}";
             
-            for(auto it:v1){
-                    cout<<it<<",";
-            }
-
       }
 
-     cout<<" " ;
 
-     
+         cout<<"\t"<<des[i]<<"  ";
 
+
+           cout<<_quantity[i]<<"  ";
+
+           cout<<_price[i]<<"  ";
+           cout<<total_price[i]<<"  ";
+
+
+
+
+
+         cout<<endl;
+
+      
 }
 
+
+
+cout<<endl<<endl<<"h.w5"<<endl<<endl;
+
+
+vector<vector<vector<string>>> subject = {
+   
+         {
+              {"hindi" , "math"},
+              {"eng" , "phy"}
+         },
+         {
+              {"history","che"},
+              {"eng","math"}
+         }
+
+
+};
+
+vector<vector<vector<float>>> marks2 = {
+
+      {
+            {98.0,97.0},
+            {95.0,96.0}
+      },
+      {
+              {90.0,85.0},
+              {85.0,75.0}
+      }
+};
+
+
+
+
+
+
+  for (int i = 0; i < marks2.size(); i++)
+  {
+
+        cout<<i<<"  ";
+
+
+                 cout<<"[";
+        for(int j = 0; j < marks2[i].size(); j++)
+        {
+               
+               cout<<"{";
+
+             for (int k = 0; k < marks2[i][j].size(); k++)
+             {
+                    cout<<subject[i][j][k]<<",";    
+             }
+             
+               cout<<"}";
+                   
+
+        }
+            cout<<"]"<<"  ";
+          
+               
+
+
+
+
+       
+            cout<<"[";
+        for(int j = 0; j < marks2[i].size(); j++)
+        {
+               
+               cout<<"{";
+
+             for (int k = 0; k < marks2[i][j].size(); k++)
+             {
+                    cout<<marks2[i][j][k]<<",";    
+             }
+             
+               cout<<"}";
+                   
+
+        }
+            cout<<"]"<<"  ";
+
+            cout<<"[";
+          
+           for (int j = 0; j < marks2[i].size(); j++)
+           {
+                     float sum = 0;
+               for (int k = 0; k <marks2[i][j].size(); k++)
+               {
+                     
+
+                     sum+=marks2[i][j][k];
+               }
+
+                 cout<<sum/2<<",";
+               
+           }
+           cout<<"]"<<"  ";
+           
+
+
+
+
+
+            cout<<endl;
+
+  }
+  
 
 
 
