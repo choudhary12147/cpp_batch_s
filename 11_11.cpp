@@ -22,11 +22,6 @@ int main()
     cout << "\n";
   }
 
-
-
-
-
-
   // another example
 
   cout << "\n"
@@ -47,71 +42,61 @@ int main()
     cout << it.first << " " << it.second.first << " " << it.second.second << endl;
   }
 
+  // h.w = 3
 
+  cout << "\n \n \n"
+       << "H.W = 3" << endl;
 
-
-// h.w = 3
-
-cout<<"\n \n \n"<<"H.W = 3"<<endl;
-
-
-struct category
-{
+  struct category
+  {
     int number;
     string item;
-};
+  };
 
-struct person
-{
-     string name;
-     vector<category> categories;
-};
+  struct person
+  {
+    string name;
+    vector<category> categories;
+  };
 
+  vector<person> table;
 
-vector<person> table;
+  person alice;
 
- person alice;
+  alice.name = "Alice";
 
- alice.name = "Alice";
+  alice.categories = {{25, "Apple"}, {28, "Orange"}};
 
- alice.categories = { {25, "Apple"},{28,"Orange"}};
+  person bob;
 
- person bob;
+  bob.name = "Bob";
 
- bob.name = "Bob";
+  bob.categories = {{26, "Banana"}, {34, "Grapess"}};
 
- bob.categories = {{26,"Banana"},{34,"Grapess"}};
+  table.push_back(alice);
+  table.push_back(bob);
 
+  cout << "name  " << "category" << endl;
 
- table.push_back(alice);
- table.push_back(bob);
+  for (auto it : table)
+  {
 
+    cout << it.name + "  ";
 
-cout<<"name  "<<"category"<<endl;
+    cout << "{";
 
- for (int i = 0; i < table.size(); i++)
- {
-      
-      
-      
+    for (auto el : it.categories)
+    {
+      cout << "{";
+      cout << el.number << "," << el.item;
+      cout << "}";
+    }
 
- }
- 
-
-
- 
-
- 
-
-
+    cout << "}" << endl;
+  }
 
 
-
-
-
-
-
-
+  
 
   return 0;
 }
