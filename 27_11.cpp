@@ -1,5 +1,5 @@
 #include <iostream>
-#include<algorithm>
+#include <algorithm>
 using namespace std;
 
 // void reverse(int arr[], int n)
@@ -21,60 +21,85 @@ using namespace std;
 //     }
 // }
 
+// void occurance(int arr[] , int n){
+
+//              int freq[100] = {0};
+
+//      for (int i = 0; i < n; i++)
+//      {
+//           freq[arr[i]]++;
+//      }
+
+//     cout<<"element appear odd number of time"<<endl;
+
+//     for (int i = 0; i < 100; i++)
+//     {
+//           if (freq[i] > 0)
+//           {
+//              if (freq[i] % 2 != 0)
+//              {
+//                  cout<<i<<"element "<<"occure "<<freq[i]<<"times"<<endl;
+//              }
+
+//                if (freq[i] == 1)
+//                {
+//                    cout<<i<<"element"<<"occure one time"<<endl;
+//                }
+
+//           }
+
+//     }
+// }
+
+void remove_dup(int arr[], int n)
+{
+
+    int count = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        bool isdup = false;
+        
+        // if (arr[i]%2 != 0)
+        // {                            // this is used for specifi element remove
+        //     isdup = true;
+        // }
+        
+        for (int j = 0; j < count; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                isdup = true;                // used to remove duplicate elements
+                break;
+            }
+            
+        }
+        
+
+
+        if (!isdup)
+        {
+            arr[count++] = arr[i];
+        }
+        
+    }
+    
+
+    for (int i = 0; i < count; i++)
+    {
+        cout<<arr[i]<<",";
+    }
+    
+
+
+
+
+}
+
 int main()
 {
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // int freq[100] = {0};
-
-    // int arr[] = {40, 15, 45, 15, 20, 25, 30, 35, 40, 45, 20, 30};
-
-    // int n = sizeof(arr) / sizeof(arr[0]);
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     freq[arr[i]]++;
-    // }
-
-    // int m = sizeof(freq) / sizeof(freq[0]);
-
-    // for (int i = 0; i < m; i++)
-    // {
-    //     if (freq[i] > 0)
-    //     {
-    //         cout << i <<":"<<freq[i]<<endl;
-    //     }
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /**  Q.1 reverse any array  */
 
     //     int arr[] = {19, 18, 17, 16, 15};
 
@@ -98,6 +123,20 @@ int main()
     //     {
     //         cout << arr1[i] << ",";
     //     }
+
+    /** Q.2 Given an array where every element occurs twice except one, find the element that appears an odd number of times */
+
+    int arr[] = {2, 2, 2, 3, 3, 4, 4, 5};
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // occurance(arr, n);
+
+    /** Q.3 Print the frequency of each element in an array. */
+
+    /** Q.4 Given an array of integers, remove all duplicates of odd numbers only and return the unique elements in the same order. */
+
+    remove_dup(arr, n);
 
     return 0;
 }
