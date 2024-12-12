@@ -238,7 +238,30 @@ Given a vector of integers, use a map to count how many numbers are odd and how 
 
 
 // int main(){
+    
+//     vector <Product> prod = {
+//         {1, "Product_A", 25.50},
+//         {2, "Product_B", 50.00},
+//         {3, "Product_C", 75.25},
+//         {4, "Product_D", 100.00},
+//         {5, "Product_E", 150.75},
+//         {6, "Product_F", 200.00},
+//         {7, "Product_G", 250.50},
+//         {8, "Product_H", 300.00},
+//         {9, "Product_I", 350.75},
+//         {10, "Product_J", 400.00}
 
+//     };
+
+
+//       for(auto it: prod){
+             
+//              if (it.Price < 200.00)
+//              {
+//               cout<<it.id<<" ,"<<it.name<<" ,"<<it.Price<<endl;
+//              }
+         
+//       }
        
 
 
@@ -253,3 +276,52 @@ Write a program that stores 5 books in an array of structures and
 
 
 
+#include<bits/stdc++.h>
+
+using namespace std;
+
+struct Book
+{
+      string title;
+      string author;
+      double price;
+};
+
+
+bool cstfun( Book &b1 , Book &b2 ){
+      
+       return b1.author < b2.author;      
+}
+
+
+
+
+int main(){
+
+     Book books[] = {
+            
+        {"The Great Gatsby", "F. Scott Fitzgerald", 10.99},
+        {"1984", "George Orwell", 8.99},
+        {"To Kill a Mockingbird", "Harper Lee", 12.50},
+        {"Pride and Prejudice", "Jane Austen", 9.75},
+        {"Moby-Dick", "Herman Melville", 15.99}
+
+     };
+
+       
+       sort(books,books+5,cstfun);
+
+
+       for( auto it : books){
+            cout<<it.title<<",";
+         
+       }
+
+
+
+
+
+     
+
+  return 0;
+}
