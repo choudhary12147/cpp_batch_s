@@ -188,44 +188,102 @@ Write a program that dynamically allocates a structure Car containing fields mod
 
 */
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
 
-using namespace std;
+// using namespace std;
 
-struct Car
-{
-    string model;
-    int year;
-    int mileage;
+// struct Car
+// {
+//     string model;
+//     int year;
+//     int mileage;
      
-     Car(string model , int year , int mileage){
+//      Car(string model , int year , int mileage){
             
-            this->mileage = mileage;
-            this->model = model;
-            this->year =  year;
+//             this->mileage = mileage;
+//             this->model = model;
+//             this->year =  year;
 
-     }
+//      }
 
-     void display(){
+//      void display(){
 
-            cout<<mileage<<" "<<year<<" "<<model<<endl;
+//             cout<<mileage<<" "<<year<<" "<<model<<endl;
 
-     }
+//      }
 
+
+// };
+
+
+
+
+// int main(){
+  
+//      Car *c1 =  new Car("dghs",89495,4894);
+
+//       c1->display();
+
+//       delete c1;
+
+
+//   return 0;
+// }
+
+/*
+Q.6Define a class Patient with attributes patientId, name, and age. 
+Dynamically allocate an array of patients, input their details, and display all records.
+ Free the memory using delete[]
+
+*/
+
+ #include<bits/stdc++.h>
+
+ using namespace std;
+
+class Patient{
+           
+           int id;
+           string name;
+           int age;
 
 };
 
 
 
+ int main(){
 
-int main(){
-  
-     Car *c1 =  new Car("dghs",89495,4894);
+           int n =5;
 
-      c1->display();
+     Patient *p1 =  new Patient[n];
 
-      delete c1;
+          
+          for (int i = 0; i < n; i++)
+          {
+             cin>>p1->name
+          }
+          
+      
+
+
+     delete [] p1;
 
 
   return 0;
-}
+ }
+
+
+
+/*
+ Q.7  Create a structure BankAccount with fields accountNumber, holderName, and balance.
+ Allocate memory for a single account, update the balance, and display the details. Free the memory afterward
+*/
+
+/*
+Q.8 Define a class Teacher with name, subject, and experience (in years). 
+Dynamically allocate an array for storing n teachers' data.
+ Input details and display them. Ensure proper memory deallocation.
+*/
+
+/*
+*/
