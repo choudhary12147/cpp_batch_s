@@ -178,10 +178,39 @@ Write a program to check if each element in an array is a strong number or not.
 */
 
 
+void reverse(int arr[] , int n){
+             
+               int st = 0;
+               int end = n;
+
+             while (st<=end)
+             {
+                  int temp = arr[st];
+                  arr[st] =  arr[end];
+                  arr[end] = temp;
+                  st++;
+                  end--;
+             }
+             
+
+
+}
+
+
 int main(){
      
        int arr[] = {2,4,6,7,3};
+
+       int n = sizeof(arr)/sizeof(arr[0]);
+
+       reverse(arr,n);
+
+       for (int i = 0; i < n; i++)
+       {
+             cout<<arr[i]<<" ";
+       }
        
+
 
     return 0;
 }
