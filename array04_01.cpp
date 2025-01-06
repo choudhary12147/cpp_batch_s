@@ -103,7 +103,7 @@ using namespace std;
 /*  without extra space using while loop and two pointer*/
 
 /*
-    binary search   for this array should be sorted 
+    binary search for this array should be sorted 
 */
 
 
@@ -198,33 +198,202 @@ using namespace std;
 
  */
 
-  void sub_arr(int *arr, int n){
+//   void sub_arr(int *arr, int n){
 
-          
-          for (int i = 0; i < n; i++)
-          {
-            for (int j = i; j < n; j++)
-            {
-                cout<<arr[j]<<" ";
-            }
-            cout<<"\n";
+//        for (int st = 0; st < n; st++)
+//        {
+//            for (int end = st; end < n; end++)
+//            {
+//                     for (int i = st; i <= end; i++)
+//                     {
+//                         cout<<arr[i];
+//                     }
+//                     cout<<",";
+                    
+//            }
+//            cout<<endl;
+//        }
+       
+//   }
+
+
+// int main(){
+
+//          int arr[]  = {4,5,2,3,6,8};
+
+//          int n = sizeof(arr)/sizeof(arr[0]);
+
+//          sub_arr(arr,n);
+
+//     return 0;
+// }
+
+
+
+
+
+/*
+   maximum sub array sum  using brute force alogo
+*/
+
+
+// int sub_arr_sum(int *arr , int n){
+
+//                     int max_sum = INT_MIN;
+
+                    
+               
+//                for (int i = 0; i < n; i++)
+//                {
+//                   for (int j = i; j < n; j++)
+//                   {
+                  
+//                   int sum = 0;
+
+//                       for (int k = i; k <= j; k++)
+//                       {
+
+//                             sum+=arr[k];    
+//                       }
+//                       cout<<sum<<",";
+//                    max_sum = max(max_sum,sum);
+                     
+//                   }
+//                   cout<<endl;
+                  
+//                }
+
+//                return max_sum;
+
+// }
+
+
+
+// int main(){
+
+//          int arr[]  = {4,5,2,3,6,8};
+
+//          int n = sizeof(arr)/sizeof(arr[0]);
+
+//          cout<<sub_arr_sum(arr,n);
+
+//     return 0;
+// }
+
+
+
+
+// optimize time complexity with o(n2)
+
+
+// int sub_arr_sum(int *arr , int n){
+
+//      int max_sum = INT_MIN;
+
+//             for (int st = 0; st < n; st++)
+//             {
+                   
+//                    int currsum = 0;
+
+//                for (int end = st; end < n; end++)
+//                {
+//                      currsum+=arr[end];
+
+//                }
+               
+//                  max_sum = max(max_sum,currsum);
+
+//             }
             
-          }
-          
+//          return max_sum;
+// }
 
 
-  }
+// int main(){
+
+//          int arr[]  = {4,5,2,3,6,8};
+
+//          int n = sizeof(arr)/sizeof(arr[0]);
+
+//          cout<<sub_arr_sum(arr,n);
+
+//     return 0;
+// }
 
 
+/* kadane algo */
+
+
+// int sub_arr_sum(int *arr , int n){
+
+//          int max_sum = INT_MIN;
+        
+//         int currsum = 0;
+
+//         for (int i = 0; i < n; i++)
+//         {
+//                currsum+=arr[i];
+//              max_sum =  max(currsum,max_sum);
+
+//              if (currsum < 0)
+//              {
+//                  currsum = 0;
+//              }
+             
+//         }
+        
+//         return max_sum;
+
+// }
+
+
+// int main(){
+
+//          int arr[]  = {4,5,2,3,6,8};
+
+//          int n = sizeof(arr)/sizeof(arr[0]);
+
+//          cout<<sub_arr_sum(arr,n);
+
+//     return 0;
+// }
+
+
+/*
+   question 1 : Given an integer array nums, return true if any value appears at least 
+               twice in the array, and return false if every element is distinct.
+*/
+
+bool check(int *nums ,int n){
+        
+        int freq[100] = {0};
+
+        for (int i = 0; i < n; i++)
+        {
+             freq[nums[i]]++;  
+           
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+                  if (freq[nums[i]] >= 2)
+                  {
+                           return true;
+                  }
+                  
+        }
+        
+            return false;    
+    
+}
 
 
 int main(){
+  
+     int nums[] = {3,4,5,6,5};
 
-         int arr[]  = {4,5,2,3,6,8};
-
-         int n = sizeof(arr)/sizeof(arr[0]);
-
-         sub_arr(arr,n);
-
+   int n = sizeof(nums)/sizeof(nums[0]);
+     cout<<check(nums,n);
+ 
     return 0;
 }
