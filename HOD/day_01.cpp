@@ -128,26 +128,108 @@ using namespace std;
 int main(){
 
     //1
-    vector<int> vec = {2,1,6,3,8,4};
+    // vector<int> vec = {2,1,6,3,8,4};
 
-     set<int> s;
+    //  set<int> s;
 
-     s.insert(vec.begin(),vec.end());
+    //  s.insert(vec.begin(),vec.end());
     
-     for(auto it:s){
-        cout<<it<<" ";
-     }
+    //  for(auto it:s){
+    //     cout<<it<<" ";
+    //  }
 
-    //2
+    // //2
      
-      auto it = s.find(6);
+    //   auto it = s.find(6);
 
-      if (it!=s.end())
-      {
-          cout<<"found"<<endl;
-      }
-      
-       cout<<(s.empty()?"set is empty":"set is not empty")<<endl;
-      
+    //   if (it!=s.end())
+    //   {
+    //       cout<<"found"<<endl;
+    //   }
+    //   //3
+    //    cout<<(s.empty()?"set is empty":"set is not empty")<<endl;
+
+    //    //4
+
+    //    multiset<int> s1 = {9,2,3,4,3,2,5,6,5,5};
+
+    //    int n =5;
+    //    cout<<n<<"appears"<<s1.count(n)<<" times"<<endl;
+        
+    //    for(auto it:s1){
+    //        cout<<it<<" ";
+    //    }
+
+
+    //5. take two vectors and find the common elements from them ?
+
+    //    vector<int> vec1 = {2,3,4,6,7};
+
+    //    vector<int> vec2 = {7,4,3,2,4,5};
+
+
+    //    unordered_set<int> us;
+    
+    //   us.insert(vec1.begin(),vec1.end());
+
+    //    unordered_set<int> common;
+
+    //   for(auto it:vec2){
+         
+    //       if (us.count(it))
+    //       {
+    //           if (common.count(it) == 0)
+    //           {
+    //               common.insert(it);
+    //           }
+              
+    //       } 
+
+    //   }
+
+    //  for(auto it:common){
+    //       cout<<it<<" ";
+    //  }
+
+    //6. take 3 vectors and merge them without duplicates
+
+        //   vector<int> v1 = {2,4,5,1};
+        //   vector<int> v2 = {5,6,7,8};
+        //   vector<int> v3 = {4,3,2,1};
+
+        
+       
+        //    unordered_set<int> us;
+
+        //    us.insert(v1.begin(),v1.end());
+        //    us.insert(v2.begin(),v2.end());
+        //    us.insert(v3.begin(),v3.end());
+       
+        //     vector<int> mvec(us.begin(),us.end());
+
+        //     for(auto it: mvec){
+        //         cout<<it<<" ";
+        //     }
+
+
+      //  7. take 2 vectors and find the duplicates 
+       
+          vector<int> v1 = {2,4,2,3,4};
+         
+           multiset<int> us(v1.begin(),v1.end());
+         
+             for(auto it: v1){
+                     
+                auto ele = us.find(it);
+                
+                if (ele != us.end())
+                {
+                       
+                }
+                
+
+             }  
+
+
      return 0;
 }
